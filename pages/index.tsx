@@ -2,7 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Navbar from "components/Navbar";
-import MainContent from "components/MainContent";
+import MainContent from "components/MainContent/index";
+import Footer from "components/Footer";
 
 export default function Home({ data }) {
   return (
@@ -13,7 +14,8 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <MainContent />
+      <MainContent data={data} />
+      <Footer />
     </div>
   );
 }
@@ -22,7 +24,7 @@ export async function getStaticProps(context) {
   let data = [];
   try {
     data = await fetch(
-      "https://goquotes-api.herokuapp.com/api/v1/random?count=100"
+      "https://goquotes-api.herokuapp.com/api/v1/random?count=50"
     );
     data = await data.json();
     data = await data.quotes;

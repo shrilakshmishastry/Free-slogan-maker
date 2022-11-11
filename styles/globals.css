@@ -1,6 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+  --primary:#146EB4;
+  --black:#1A181E;
+  --black-95: #F2F2F2;
+  --black-30:#4D4D4D;
+  --white:#ffffff;
+}
+
+
 html,
 body {
   padding: 0;
