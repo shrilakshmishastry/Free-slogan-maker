@@ -2,33 +2,24 @@ import SloganMaker from "./SloganMaker";
 import FreeProducts from "./FreeProducts";
 import Actions from "./Actions";
 import PropTypes from "prop-types";
-import { FC, useState } from "react";
-import Pagination from "./Pagenations";
+import { FC } from "react";
+import styles from "styles/Slogans.module.css";
 
 export interface MainContentProps {
   data: Array;
 }
 
 const MainContent: FC<MainContentProps[]> = ({ data }) => {
-  const [slogans, setSlogans] = useState([...data]);
-  console.log(slogans === data);
   return (
     <main>
-      <section>
+      <section className={`flex justify-center ${styles.sloganContainer}`}>
         <SloganMaker Slogans={data} />
-        <Pagination
-          currentPage={1}
-          totalCount={100}
-          siblingCount={1}
-          pageSize={2}
-          onPageChange={() => console.log("hello")}
-        />
-      </section>
-      <section>
-        <FreeProducts />
       </section>
       <section>
         <Actions />
+      </section>
+      <section>
+        <FreeProducts />
       </section>
     </main>
   );

@@ -24,7 +24,7 @@ export async function getStaticProps(context) {
   let data = [];
   try {
     data = await fetch(
-      "https://goquotes-api.herokuapp.com/api/v1/random?count=50"
+      "https://goquotes-api.herokuapp.com/api/v1/random?count=90"
     );
     data = await data.json();
     data = await data.quotes;

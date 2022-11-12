@@ -1,23 +1,23 @@
 import Image from "next/image";
 import { FC, Children } from "react";
 import { actionContent } from "utils/MainContent/actions-content";
+import styles from "styles/Action.module.css";
 
 const ActionChildren = Children.toArray(
   actionContent.map((action) => {
     return (
-      <>
-        <h6>{action.title}</h6>
+      <div className={styles.contentContainer}>
         <Image alt={action.title} height={48} width={48} src={action.icon} />
-        <p>{action.description}</p>
-      </>
+        <h6 className={styles.title}>{action.title}</h6>
+        <p className={styles.subTitle}>{action.description}</p>
+      </div>
     );
   })
 );
 
 const Actions: Fc<> = () => {
   return (
-    <div>
-      Actions
+    <div className={styles.container}>
       {Children.map(ActionChildren, (child) => {
         return <>{child}</>;
       })}

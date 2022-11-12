@@ -6,6 +6,9 @@
       "components/*": [
         "components/*"
       ],
+      "asset/*": [
+        "asset/*"
+      ],
       "utils/*": [
         "utils/*"
       ],

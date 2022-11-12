@@ -1,19 +1,20 @@
 import Image from "next/image";
 import { FC, Children, cloneElement } from "react";
 import { freeProdcts } from "utils/MainContent/actions-content";
+import styles from "styles/FreeProducts.module.css";
 
 const freeProd = Children.toArray(
   freeProdcts.map((product) => {
     return (
-      <div>
-        <h6>{product.title}</h6>
+      <div className="">
         <Image
           alt={`${product.title}`}
           src={product.icon}
-          width={350}
+          width={290}
           height={200}
         />
-        <p>{product.description}</p>
+        <h6 className={styles.cardTitle}>{product.title}</h6>
+        <p className={styles.subTitle}>{product.description}</p>
       </div>
     );
   })
@@ -21,11 +22,13 @@ const freeProd = Children.toArray(
 
 const FreeProducts: FC<> = () => {
   return (
-    <div>
-      Free products
-      {Children.map(freeProd, (child) => {
-        return <>{child}</>;
-      })}
+    <div className={styles.container}>
+      <h2 className={styles.title}>Try our other free products</h2>
+      <div className={styles.cardContainer}>
+        {Children.map(freeProd, (child) => {
+          return <>{child}</>;
+        })}
+      </div>
     </div>
   );
 };

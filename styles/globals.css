@@ -8,15 +8,41 @@
   --black-95: #F2F2F2;
   --black-30:#4D4D4D;
   --white:#ffffff;
+  --black-98:#FAFAFA;
+  --black-85:#D9D9D9;
 }
 
+@font-face {
+  font-family: "GalanoGrotesque";
+  src: url('../asset/galano-grotesque/GalanoGrotesque.otf');
+}
+@font-face {
+  font-family: "GalanoGrotesqueBold";
+  src: url('../asset/galano-grotesque/GalanoGrotesqueBold.otf');
+}
+@font-face {
+  font-family: "GalanoGrotesqueMedium";
+  src: url('../asset/galano-grotesque/GalanoGrotesqueMedium.otf');
+}
+@font-face {
+  font-family: "GalanoGrotesqueLight";
+  src: url('../asset/galano-grotesque/GalanoGrotesqueLight.otf');
+}
+@font-face {
+  font-family: "GalanoGrotesqueSemiBold";
+  src: url('../asset/galano-grotesque/GalanoGrotesqueSemiBold.otf');
+}
+@font-face {
+  font-family: "GalanoGrotesqueSemiThin";
+  src: url('../asset/galano-grotesque/GalanoGrotesqueThin.otf');
+}
 
 html,
 body {
+  background-color: var(--black-98);
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'GalanoGrotesque';  
 }
 
 a {

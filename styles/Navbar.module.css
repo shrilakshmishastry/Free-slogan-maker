@@ -1,0 +1,20 @@
+.navbar{
+  height: 20.5rem;
+  width: 100%;
+  background-color: var(--primary);
+}
+
+.pcBtn{
+  background-color: var(--white);
+  color: var(--primary);
+  border-radius: 0.25rem;
+  padding: 0.4rem 2rem 0.5rem;
+  font-weight: 400;
+  font-size: 1.1rem;
+  font-family: "GalanoGrotesqueMedium";
+}
+@media screen and (max-width:600px) {
+  .menuDropDown{
+    background-color: var(--primary);
+  }  
+}
