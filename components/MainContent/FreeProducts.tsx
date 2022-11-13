@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FC, Children, cloneElement } from "react";
-import { freeProdcts } from "utils/MainContent/actions-content";
+import { freeProdcts } from "utils/data/actions-content";
 import styles from "styles/FreeProducts.module.css";
 
 const freeProd = Children.toArray(

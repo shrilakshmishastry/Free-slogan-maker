@@ -5,7 +5,13 @@ import Navbar from "components/Navbar";
 import MainContent from "components/MainContent/index";
 import Footer from "components/Footer";
 
-export default function Home({ data }) {
+export interface HomeProps {
+  text: string;
+  author: string;
+  tag: string;
+}
+
+export default function Home({ data }: { data: HomeProps[] }) {
   return (
     <div className={styles.container}>
       <Head>

@@ -25,7 +25,11 @@ const SloganMaker: FC<SloganMakersProps[]> = ({ Slogans }) => {
   const searchTermId = useId();
   const SloganChildren = Children.toArray(
     slogans.map((value) => {
-      return <p className={` col-span-1 ${styles.slogan}`}>{value.text}</p>;
+      return (
+        <p role={"button"} className={` col-span-1 ${styles.slogan}`}>
+          {value.text}
+        </p>
+      );
     })
   );
 

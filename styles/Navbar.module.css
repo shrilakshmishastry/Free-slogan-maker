@@ -13,6 +13,12 @@
   font-size: 1.1rem;
   font-family: "GalanoGrotesqueMedium";
 }
+
+.pcBtn:hover{
+  background-color: var(--primary);
+  color: var(--white);
+}
+
 @media screen and (max-width:600px) {
   .menuDropDown{
     background-color: var(--primary);

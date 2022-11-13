@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FC, Children } from "react";
-import { actionContent } from "utils/MainContent/actions-content";
+import { actionContent } from "utils/data/actions-content";
 import styles from "styles/Action.module.css";
 
 const ActionChildren = Children.toArray(
