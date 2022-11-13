@@ -6,7 +6,7 @@
   top: -12.4rem;   
   display: flex;
   flex-direction: column;
-  padding: 4rem 12rem 5rem 12rem; 
+  padding: 4rem 10rem 5rem 10rem; 
   box-shadow: 0px 2px 8px rgba(26, 24, 30, 0.06);
   border-radius: 0.5rem;
 }
@@ -126,12 +126,12 @@
 
 .clickToCopyPanel{
   position: absolute;
-  left: 3.5rem;
+  left: 2rem;
 }
 
 .copiedPanel{
  position: absolute;
-  left: 6rem;
+  left: 4.5rem;
   margin-top: 3rem;
 }
 
