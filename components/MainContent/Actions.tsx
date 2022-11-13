@@ -8,8 +8,10 @@ const ActionChildren = Children.toArray(
     return (
       <div className={styles.contentContainer}>
         <Image alt={action.title} height={48} width={48} src={action.icon} />
-        <h6 className={styles.title}>{action.title}</h6>
-        <p className={styles.subTitle}>{action.description}</p>
+        <div className="h-36 mt-9">
+          <h6 className={styles.title}>{action.title}</h6>
+          <p className={styles.subTitle}>{action.description}</p>
+        </div>
       </div>
     );
   })

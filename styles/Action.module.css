@@ -8,7 +8,7 @@ grid-template-rows: auto;
 gap: 1rem;
 place-items: center;
 padding: 5rem 10rem;
-}
+} 
 
 .contentContainer{
   text-align: center;
@@ -20,8 +20,7 @@ padding: 5rem 10rem;
   color: var(--black);
   font-weight: 400;
   font-size: 1.25rem;
-  font-family: "GalanoGrotesqueMedium";
-  margin-top: 2rem;
+  font-family: "GalanoGrotesqueMedium";  
   margin-bottom: 0.5rem;
 }
 
