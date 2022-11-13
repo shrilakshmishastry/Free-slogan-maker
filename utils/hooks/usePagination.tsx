@@ -1,7 +1,7 @@
 import React from "react";
 import { useMemo } from "react";
 
-const range = (start: number, end: number): Array => {
+const range = (start: number, end: number): Array<any> => {
   let length = end - start + 1;
   return Array.from({ length }, (_, idx) => idx + start);
 };

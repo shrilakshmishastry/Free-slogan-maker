@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FC } from "react";
 import styles from "styles/Footer.module.css";
 import Logo from "images/whitelogo.svg";
 import Link from "next/link";
@@ -12,7 +13,7 @@ import {
 } from "utils/data/footer-content";
 import Flag from "images/flag.svg";
 
-const LinkGenerator = ({ data }: { data: string[] }) => {
+const LinkGenerator: FC<{ data: string[] }> = ({ data }) => {
   const children = Children.toArray(
     data.map((value) => {
       return (
@@ -22,9 +23,13 @@ const LinkGenerator = ({ data }: { data: string[] }) => {
       );
     })
   );
-  return Children.map(children, (value) => {
-    return <>{value}</>;
-  });
+  return (
+    <>
+      {Children.map(children, (value) => {
+        return <>{value}</>;
+      })}
+    </>
+  );
 };
 
 const Footer = () => {

@@ -5,11 +5,11 @@ import PropTypes from "prop-types";
 import { FC } from "react";
 import styles from "styles/Slogans.module.css";
 
-export interface MainContentProps {
-  data: Array;
-}
+// export interface MainContentProps {
+//   data: Array<any>;
+// }
 
-const MainContent: FC<MainContentProps[]> = ({ data }) => {
+const MainContent: FC<any> = ({ data }) => {
   return (
     <main>
       <section className={`flex justify-center ${styles.sloganContainer}`}>

@@ -15,7 +15,7 @@ const ActionChildren = Children.toArray(
   })
 );
 
-const Actions: Fc<> = () => {
+const Actions: FC<{}> = () => {
   return (
     <div className={styles.container}>
       {Children.map(ActionChildren, (child) => {

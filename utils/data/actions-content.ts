@@ -22,7 +22,7 @@ export const actionContent: actionContentType[] = [
   },
 ];
 
-export const freeProdcts: actionContent[] = [
+export const freeProdcts: actionContentType[] = [
   {
     icon: require('images/privacyPolicy.svg'),
     title: 'Privacy Policy Generator',

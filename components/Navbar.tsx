@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { useState } from "react";
+import { FC, useState } from "react";
 import Image from "next/image";
 import styles from "styles/Navbar.module.css";
 import Logo from "images/whitelogo.svg";
 
-const Navbar: FC<> = () => {
+const Navbar: FC<{}> = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (

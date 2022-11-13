@@ -3,13 +3,15 @@ import PropTypes from "prop-types";
 import Pagination from "./Pagenations";
 import styles from "styles/Slogans.module.css";
 
-export interface SloganMakersProps {
-  text: string;
-  author: string;
-  tag: string;
-}
+// export interface SloganMakersProps {
+//   Slogans: {
+// text: string;
+// author: string;
+// tag: string;
+//   }[];
+// }
 
-const SloganMaker: FC<SloganMakersProps[]> = ({ Slogans }) => {
+const SloganMaker: FC<any> = ({ Slogans }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [text, setText] = useState("");
 
@@ -24,7 +26,7 @@ const SloganMaker: FC<SloganMakersProps[]> = ({ Slogans }) => {
 
   const searchTermId = useId();
   const SloganChildren = Children.toArray(
-    slogans.map((value) => {
+    slogans.map((value: { text: string; author: string; tag: string }) => {
       return (
         <p role={"button"} className={` col-span-1 ${styles.slogan}`}>
           {value.text}
@@ -94,7 +96,7 @@ const SloganMaker: FC<SloganMakersProps[]> = ({ Slogans }) => {
           totalCount={totalCount}
           siblingCount={1}
           pageSize={pageSize}
-          onPageChange={(currentPage) => setCurrentPage(currentPage)}
+          onPageChange={(currentPage: number) => setCurrentPage(currentPage)}
         />
       </div>
     </div>
@@ -102,6 +104,6 @@ const SloganMaker: FC<SloganMakersProps[]> = ({ Slogans }) => {
 };
 
 SloganMaker.propTypes = {
-  Slogans: PropTypes.array,
+  Slogans: PropTypes.array.isRequired,
 };
 export default SloganMaker;

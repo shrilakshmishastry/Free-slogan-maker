@@ -24,7 +24,7 @@ const Pagination: FC<PaginationProps> = ({
     siblingCount,
     pageSize,
   });
-  if (currentPage === 0 || paginationRange.length < 2) {
+  if (currentPage === 0 || (paginationRange && paginationRange?.length < 2)) {
     return null;
   }
 
@@ -36,7 +36,7 @@ const Pagination: FC<PaginationProps> = ({
     onPageChange(currentPage - 1);
   };
 
-  let lastPage = paginationRange[paginationRange.length - 1];
+  let lastPage = paginationRange && paginationRange[paginationRange.length - 1];
 
   return (
     <div className=" flex justify-between lg:px-4 py-3">
@@ -62,19 +62,22 @@ const Pagination: FC<PaginationProps> = ({
         Previous
       </button>
       <div className="flex">
-        {paginationRange.map((value, index) => {
-          return (
-            <p
-              onClick={() => onPageChange(value)}
-              className={
-                value === currentPage ? styles.activePageNum : styles.pageNumber
-              }
-              key={index.toString()}
-            >
-              {value}
-            </p>
-          );
-        })}
+        {paginationRange &&
+          paginationRange.map((value: number, index: number) => {
+            return (
+              <p
+                onClick={() => onPageChange(value)}
+                className={
+                  value === currentPage
+                    ? styles.activePageNum
+                    : styles.pageNumber
+                }
+                key={index.toString()}
+              >
+                {value}
+              </p>
+            );
+          })}
       </div>
       <button
         className={lastPage === currentPage ? styles.btnHidden : styles.btn}
@@ -102,10 +105,10 @@ const Pagination: FC<PaginationProps> = ({
 };
 
 Pagination.propTypes = {
-  currentPage: PropTypes.number,
-  totalCount: PropTypes.number,
-  siblingCount: PropTypes.number,
-  pageSize: PropTypes.number,
-  onPageChange: PropTypes.func,
+  currentPage: PropTypes.number.isRequired,
+  totalCount: PropTypes.number.isRequired,
+  siblingCount: PropTypes.number.isRequired,
+  pageSize: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired,
 };
 export default Pagination;

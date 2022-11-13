@@ -20,7 +20,7 @@ const freeProd = Children.toArray(
   })
 );
 
-const FreeProducts: FC<> = () => {
+const FreeProducts: FC<{}> = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Try our other free products</h2>

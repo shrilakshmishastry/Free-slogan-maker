@@ -26,14 +26,14 @@ export default function Home({ data }: { data: HomeProps[] }) {
   );
 }
 
-export async function getStaticProps(context) {
-  let data = [];
+export async function getStaticProps(context: any) {
+  let data: any[] = [];
   try {
-    data = await fetch(
+    let res: any = await fetch(
       "https://goquotes-api.herokuapp.com/api/v1/random?count=90"
     );
-    data = await data.json();
-    data = await data.quotes;
+    let json: any = await res.json();
+    data = await json.quotes;
     return {
       props: {
         data,
