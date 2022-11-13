@@ -1,7 +1,13 @@
 .navbar{
   height: 20.5rem;
   width: 100%;
-  background-color: var(--primary);
+  background-color: var(--primary); 
+}
+
+.navbarContainer{
+  position: fixed;
+  width: inherit;
+  z-index: 2;
 }
 
 .pcBtn{

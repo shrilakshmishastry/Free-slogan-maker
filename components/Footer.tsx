@@ -56,10 +56,10 @@ const Footer = () => {
           <LinkGenerator data={footerThirdCol} />
         </div>
         <div className={styles.commonContainer}>
-          <Link className="mb-4 text-white" href={""}>
+          <Link className="mb-4  text-white" href={""}>
             About
           </Link>
-          <Link className="mb-4 text-white flex" href={""}>
+          <Link className="mb-4 text-white  flex " href={""}>
             Jobs
             <span className={styles.noOfJobs}>{noOfJobOpening}</span>
           </Link>

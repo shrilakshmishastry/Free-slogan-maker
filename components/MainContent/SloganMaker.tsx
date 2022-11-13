@@ -1,4 +1,13 @@
-import { FC, Children, useState, useMemo, useTransition, useId } from "react";
+import {
+  FC,
+  Children,
+  useState,
+  useMemo,
+  useTransition,
+  useId,
+  useEffect,
+  useRef,
+} from "react";
 import PropTypes from "prop-types";
 import Pagination from "./Pagenations";
 import styles from "styles/Slogans.module.css";
@@ -23,16 +32,45 @@ const SloganMaker: FC<any> = ({ Slogans }) => {
     const lastPageIndex = firstPageIndex + pageSize;
     return Slogans.slice(firstPageIndex, lastPageIndex);
   }, [currentPage]);
+  const [handleHover, setHandleHover] = useState(false);
+  const [textCopied, setTextCopied] = useState(false);
+  const [hoveredPannel, setHoveredPannel] = useState(-1);
+  const [copiedPannel, setCopiedPannel] = useState(-1);
 
   const searchTermId = useId();
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTextCopied(false);
+      setHoveredPannel(-1);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [textCopied]);
+
   const SloganChildren = Children.toArray(
-    slogans.map((value: { text: string; author: string; tag: string }) => {
-      return (
-        <p role={"button"} className={` col-span-1 ${styles.slogan}`}>
-          {value.text}
-        </p>
-      );
-    })
+    slogans.map(
+      (value: { text: string; author: string; tag: string }, index: number) => {
+        return (
+          <p
+            role={"button"}
+            onMouseOver={() => {
+              setHandleHover(true);
+              setHoveredPannel(index);
+            }}
+            onMouseOut={() => {
+              setHandleHover(false);
+              setHoveredPannel(-1);
+            }}
+            onClick={() => {
+              setTextCopied(true);
+              setCopiedPannel(index);
+            }}
+            className={` col-span-1 ${styles.slogan}`}
+          >
+            {value.text}
+          </p>
+        );
+      }
+    )
   );
 
   return (
@@ -79,13 +117,27 @@ const SloganMaker: FC<any> = ({ Slogans }) => {
           </h3>
           <button className={styles.downloadBtn}>Download all</button>
         </div>
-        <span className={`${styles.modal} ${styles.clickToCopyPanel}`}>
-          Click to copy
-        </span>
-        <span className={`${styles.modal} ${styles.copiedPanel}`}>Copied!</span>
-        <div className=" grid lg:grid-cols-2 grid-cols-1 gap-8 auto-rows-auto my-9">
-          {Children.map(SloganChildren, (value) => {
-            return <>{value}</>;
+
+        <div className=" grid lg:grid-cols-2 grid-cols-1 gap-x-8 gap-y-6 auto-rows-auto my-9">
+          {Children.map(SloganChildren, (value, index) => {
+            return (
+              <div>
+                {handleHover && hoveredPannel === index && (
+                  <span
+                    className={`${styles.modal} ${styles.clickToCopyPanel}`}
+                  >
+                    Click to copy
+                  </span>
+                )}
+
+                {textCopied && copiedPannel === index && (
+                  <span className={`${styles.modal} ${styles.copiedPanel}`}>
+                    Copied!
+                  </span>
+                )}
+                {value}
+              </div>
+            );
           })}
         </div>
       </div>

@@ -6,8 +6,9 @@
   top: -12.4rem;   
   display: flex;
   flex-direction: column;
-  padding: 4rem 9rem 5rem 9rem; 
+  padding: 4rem 12rem 5rem 12rem; 
   box-shadow: 0px 2px 8px rgba(26, 24, 30, 0.06);
+  border-radius: 0.5rem;
 }
 .sloganContainer {
    padding: 0 10rem;
@@ -75,6 +76,7 @@
   background-color: var(--white);
   color: var(--primary);
   border: 0.1rem solid var(--primary);
+  z-index: 2;
 }
 
 .slogansTitle{
@@ -91,7 +93,8 @@
   box-shadow: 0px 2px 8px rgba(26, 24, 30, 0.06);
   border-radius: 0.3rem;
   color: var(--primary);
-  padding: 0.1rem  1rem 0.3rem;  
+  padding: 0.1rem  1rem 0.3rem; 
+  z-index: 2; 
 }
 .downloadBtn:hover{
   color: var(--white);
@@ -100,7 +103,7 @@
 
 .slogan{
   background-color: var(--black-95);
-  max-height: 5rem;
+  height: 4rem;
   color: var(--black);
   font-size: 1rem;
   font-weight: 400;
@@ -123,13 +126,13 @@
 
 .clickToCopyPanel{
   position: absolute;
-  left: 1rem;
-  top: 50%;
+  left: 3.5rem;
 }
+
 .copiedPanel{
  position: absolute;
-  left: 3.5rem;
-  top: 55%;
+  left: 6rem;
+  margin-top: 3rem;
 }
 
 .btn{

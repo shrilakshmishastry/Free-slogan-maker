@@ -5,26 +5,27 @@
   display: flex;
   flex-direction: column;
   gap:2rem;
-  padding: 4rem 10rem;
+  padding: 4rem 10rem 2rem;
 }
 
 .mainContentContainer{
   display: grid;
-  grid-template-columns: repeat(7,1fr);
+  grid-template-columns: repeat(6,1fr);
   grid-template-rows: auto;
 }
 
-.imgContainer{
-  grid-column: 1/3;
-}
+
 
 .divider{
-  border-bottom: 0.063rem var(--white) solid;  
+  border-bottom: 0.063rem var(--white) solid;
+  opacity: 0.2;  
 }
 
 .commonContainer{
   display: flex;
   flex-direction: column;
+  text-align: left;
+  justify-self: end;
 }
 
 .noOfJobs{
@@ -50,12 +51,16 @@
   padding: 2rem 1rem;
  } 
  .mainContentContainer{
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(2,1fr);
   row-gap: 1rem;
   padding: 0rem 1rem;
+  
  }
  .imgContainer{
-  grid-column: 1/4;
-}
+  grid-column: 1/3;
+ }
+ .commonContainer{
+  justify-self:flex-start;
+ }
 
 }
